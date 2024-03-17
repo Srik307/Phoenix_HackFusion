@@ -142,8 +142,8 @@ def index():
 
 @app.route('/result', methods=['POST'])
 def result():
-  
     learning_answers = [request.form.get(f'learning_q{i}', '') for i in range(1, 31)]
+    print(learning_answers)
 
     processing_answers = [request.form.get(f'processing_q{i}', '') for i in range(1, 31)]
    
@@ -155,6 +155,7 @@ def result():
     learning_result = analyze_learning_style(learning_answers)
     processing_result = analyze_processing_speed(processing_answers)
     memory_result = analyze_memory_recall(memory_answers)
+    print(memory_result)
     attention_result = analyze_attention_span(attention_answers)
 
 
@@ -164,6 +165,7 @@ def result():
 
 
 def analyze_learning_style(answers):
+    print(answers)
     visual_count = answers.count('a') + answers.count('b')
     auditory_count = answers.count('c')
     read_write_count = answers.count('d') + answers.count('e')
@@ -178,11 +180,11 @@ def analyze_learning_style(answers):
 
 def analyze_processing_speed(answers):
     response_values = {
-        "Very comfortable": 5,
-        "Comfortable": 4,
-        "Neutral": 3,
-        "Uncomfortable": 2,
-        "Very uncomfortable": 1
+        "a": 5,
+        "b": 4,
+        "c": 3,
+        "d": 2,
+        "e": 1
     }
 
     question_scores = {}
@@ -199,13 +201,13 @@ def analyze_processing_speed(answers):
 
 
 def analyze_memory_recall(answers):
-   
+    print(answers)
     response_values = {
-        "Very comfortable": 5,
-        "Comfortable": 4,
-        "Neutral": 3,
-        "Uncomfortable": 2,
-        "Very uncomfortable": 1
+        "a": 5,
+        "b": 4,
+        "c": 3,
+        "d": 2,
+        "e": 1
     }
 
     question_scores = {}
@@ -223,11 +225,11 @@ def analyze_memory_recall(answers):
 
 def analyze_attention_span(answers):
     response_values = {
-        "Very comfortable": 5,
-        "Comfortable": 4,
-        "Neutral": 3,
-        "Uncomfortable": 2,
-        "Least comfortable": 1
+        "a": 5,
+        "b": 4,
+        "c": 3,
+        "d": 2,
+        "e": 1
     }
 
     question_scores = {}
