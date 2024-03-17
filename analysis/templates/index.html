@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assessment</title>
+</head>
+<body>
+    <h1>Assessment</h1>
+    <form action="/result" method="post">
+        <h2>Learning Style Assessment</h2>
+        {% set learning_question_count = learning_questions|length %}
+        {% for i in range(1, learning_question_count + 1) %}
+        {% set question = learning_questions[i - 1] %}
+        <div>
+            <p>Question {{ i }}</p>
+            <p>{{ question }}</p>
+            <label for="learning_q{{ i }}_a">a) Very comfortable</label>
+            <input type="radio" id="learning_q{{ i }}_a" name="learning_q{{ i }}" value="a">
+            <label for="learning_q{{ i }}_b">b) Comfortable</label>
+            <input type="radio" id="learning_q{{ i }}_b" name="learning_q{{ i }}" value="b">
+            <label for="learning_q{{ i }}_c">c) Neutral</label>
+            <input type="radio" id="learning_q{{ i }}_c" name="learning_q{{ i }}" value="c">
+            <label for="learning_q{{ i }}_d">d) Uncomfortable</label>
+            <input type="radio" id="learning_q{{ i }}_d" name="learning_q{{ i }}" value="d">
+            <label for="learning_q{{ i }}_e">e) Very uncomfortable</label>
+            <input type="radio" id="learning_q{{ i }}_e" name="learning_q{{ i }}" value="e">
+        </div>
+        {% endfor %}
+
+        <h2>Processing Speed Assessment</h2>
+        {% set processing_speed_question_count = processing_speed_questions|length %}
+        {% for i in range(1, processing_speed_question_count + 1) %}
+        {% set question = processing_speed_questions[i - 1] %}
+        <div>
+            <p>Question {{ i }}</p>
+            <p>{{ question }}</p>
+            <label for="processing_q{{ i }}_a">a) Very comfortable</label>
+            <input type="radio" id="processing_q{{ i }}_a" name="processing_q{{ i }}" value="a">
+            <label for="processing_q{{ i }}_b">b) Comfortable</label>
+            <input type="radio" id="processing_q{{ i }}_b" name="processing_q{{ i }}" value="b">
+            <label for="processing_q{{ i }}_c">c) Neutral</label>
+            <input type="radio" id="processing_q{{ i }}_c" name="processing_q{{ i }}" value="c">
+            <label for="processing_q{{ i }}_d">d) Uncomfortable</label>
+            <input type="radio" id="processing_q{{ i }}_d" name="processing_q{{ i }}" value="d">
+            <label for="processing_q{{ i }}_e">e) Very uncomfortable</label>
+            <input type="radio" id="processing_q{{ i }}_e" name="processing_q{{ i }}" value="e">
+        </div>
+        {% endfor %}
+
+        <h2>Memory Recall Assessment</h2>
+        {% set memory_recall_question_count = memory_recall_questions|length %}
+        {% for i in range(1, memory_recall_question_count + 1) %}
+        {% set question = memory_recall_questions[i - 1] %}
+        <div>
+            <p>Question {{ i }}</p>
+            <p>{{ question }}</p>
+            <label for="memory_q{{ i }}_a">a) Very comfortable</label>
+            <input type="radio" id="memory_q{{ i }}_a" name="memory_q{{ i }}" value="a">
+            <label for="memory_q{{ i }}_b">b) Comfortable</label>
+            <input type="radio" id="memory_q{{ i }}_b" name="memory_q{{ i }}" value="b">
+            <label for="memory_q{{ i }}_c">c) Neutral</label>
+            <input type="radio" id="memory_q{{ i }}_c" name="memory_q{{ i }}" value="c">
+            <label for="memory_q{{ i }}_d">d) Uncomfortable</label>
+            <input type="radio" id="memory_q{{ i }}_d" name="memory_q{{ i }}" value="d">
+            <label for="memory_q{{ i }}_e">e) Very uncomfortable</label>
+            <input type="radio" id="memory_q{{ i }}_e" name="memory_q{{ i }}" value="e">
+        </div>
+        {% endfor %}
+
+        <h2>Attention Span Assessment</h2>
+        {% set attention_span_question_count = attention_span_questions|length %}
+        {% for i in range(1, attention_span_question_count + 1) %}
+        {% set question = attention_span_questions[i - 1] %}
+        <div>
+            <p>Question {{ i }}</p>
+            <p>{{ question }}</p>
+            <label for="attention_q{{ i }}_a">a) Very comfortable</label>
+            <input type="radio" id="attention_q{{ i }}_a" name="attention_q{{ i }}" value="a">
+            <label for="attention_q{{ i }}_b">b) Comfortable</label>
+            <input type="radio" id="attention_q{{ i }}_b" name="attention_q{{ i }}" value="b">
+            <label for="attention_q{{ i }}_c">c) Neutral</label>
+            <input type="radio" id="attention_q{{ i }}_c" name="attention_q{{ i }}" value="c">
+            <label for="attention_q{{ i }}_d">d) Uncomfortable</label>
+            <input type="radio" id="attention_q{{ i }}_d" name="attention_q{{ i }}" value="d">
+            <label for="attention_q{{ i }}_e">e) Very uncomfortable</label>
+            <input type="radio" id="attention_q{{ i }}_e" name="attention_q{{ i }}" value="e">
+        </div>
+        {% endfor %}
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
